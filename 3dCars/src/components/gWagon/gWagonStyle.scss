@@ -1,0 +1,428 @@
+.gWagon{
+  width: 100vw;
+  height: 100vh;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+  .body{
+    position: relative;
+    width: 21.87mm;
+    height: 46.06mm;
+    background-color: rgb(0, 0, 0);
+    transform-style: preserve-3d;
+    transform:  rotateX(-110deg) rotateZ(50deg) translateY(0);    
+    .back{
+      height: 19.69mm;
+      width: 21.87mm;
+      transform-style: preserve-3d;
+      background-color: rgb(37, 37, 37);
+      transform-origin: bottom;
+      position: absolute;
+      bottom: 0;
+      transform: rotateX(90deg);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      .trunk{
+        margin-top: 0.5mm;
+        transform-style: preserve-3d;
+        width: 70%;
+        height: 80%;
+        border: 0.1mm solid rgb(0, 0, 0);
+        background-color: rgb(27, 27, 27);
+        border-radius: 0.5mm;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        padding: 1mm 0;
+        transform-origin: right;
+        transition: 200ms;
+        &:hover{
+          transform: rotateY(-60deg);
+        }
+        .window{
+          height: 50%;
+          width: 90%;
+          background-color: rgba(255, 255, 255, 0.546);
+          border-radius: 0.3mm;
+        }
+      }
+      .tailLights{
+        width: 100%;
+        height: 20%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1mm;
+        div{
+          width: 3.5mm;
+          height: 1.5mm;
+          background-color: white;
+          border-radius: 0.4mm;
+          border: 0.6mm solid rgb(108, 0, 0);
+        }
+      }
+    }
+    .leftSide,.rightSide{
+      height: 35.7mm;
+      width: 0;
+      transform-style: preserve-3d;
+      position: absolute;
+      bottom: 0;
+      .frontDoor{
+        transform-style: preserve-3d;
+        transform-origin: top;
+        transform: rotateY(180deg) translateZ(0.01mm) translateX(18.5mm)translateY(-3.5mm);
+        height: 10mm;
+        width: 17.5mm;
+        transition: 200ms;
+        .mirror{
+          position: absolute;
+          transform-style: preserve-3d;
+          width: 2.5mm;
+          height: 4mm;
+          background-color:black;
+          transform-origin: top;
+          top: 0.5mm;
+          left: 6.8mm;
+          border-radius: 0.7mm;
+          z-index: 4;
+          transform: rotateX(40deg);            
+        }
+        &:hover{
+          transform: rotateY(180deg)  translateZ(0.01mm) translateX(18.5mm) translateY(-3.5mm) rotateX(40deg);
+        }
+        &::after{
+          background-color: rgb(28, 28, 28);
+          content: '';
+          position: absolute;
+          width: 47%;
+          height: 50%;
+          border-top: 0.3mm solid black;
+          top: 5.5px;
+          left: 3.6px;
+          transform: rotate(-25deg);
+          z-index: -1;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          width: 9.75mm;
+          height: 95%;
+          border-top: 0.3mm solid black;         
+          border-right: 0.3mm solid black;
+          top: 0mm;
+          left: 7.5mm;
+          background-color: rgb(19, 19, 19);
+          z-index: 1;
+         }
+        .windowCover{
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 65%;
+          border-left: 0.3mm solid black;
+          border-bottom: 0.3mm solid black;
+          background-color: rgb(19, 19, 19);
+        }
+        .window{
+          position: absolute;
+          height: 40%;
+          height: calc(100% - 2mm);
+          top: 1mm;
+          left: 1mm;
+          z-index: 2;
+          border-right: 6.5mm solid  rgba(255, 255, 255, 0.546);
+          border-bottom: 0mm solid transparent;
+          border-top: 3mm solid transparent;
+        }
+      }
+      .backDoor{
+        transform-style: preserve-3d;
+        transform-origin: top;
+        transform: rotateY(180deg)  translateY(-3mm) translateZ(0.01mm) translateX(18.5mm);
+        height: 9mm;
+        width: 17.5mm;
+        transition: 200ms;
+        &:hover{
+          transform: rotateY(180deg) translateY(-3mm) translateZ(0.01mm) translateX(18.5mm)  rotateX(40deg);
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          width: 8.5mm;
+          height: 4mm;
+          border-bottom: 0.3mm solid black;         
+          bottom:2.1mm;
+          right: 0.5mm;
+          background-color: rgb(19, 19, 19);
+          z-index: 2;
+          transform:rotate(-35deg);
+         }
+         &::after{
+          content: '';
+          position: absolute;
+          width: 17mm;
+          height: 3.7mm;
+          border-right: 0.3mm solid black;       
+          border-top: 0.3mm solid black;  
+          border-left: 0.3mm solid black;  
+          background-color: rgb(19, 19, 19);
+          z-index: 1;
+         }
+         .windowCover{
+          position: absolute;
+          bottom: 0;
+          width: 60%;
+          height: 68%;
+          border-left: 0.3mm solid black;
+          border-bottom: 0.3mm solid black;
+          background-color: rgb(19, 19, 19);
+        }
+        .window{
+          position: absolute;
+          height: calc(100% - 2mm);
+          width: 37%;
+          background-color:  rgba(255, 255, 255, 0.546);
+          z-index: 3;
+          top: 1mm;
+          left: 1mm;
+        }
+      } 
+      &>.window{
+        position:absolute;
+        width: 6.5mm;
+        height: 6.5mm;
+        background-color:  rgba(255, 255, 255, 0.546);
+        z-index: 4;
+        left: -8.4mm;
+        bottom: 3mm;
+      }
+      .wheelCoverFront,.wheelCoverBack{
+        position: absolute;
+        width: 2.5mm;
+        height: 7mm;
+        background-color: rgb(60, 60, 60);
+        transform-style: preserve-3d;
+        transform-origin: left;
+        transform: rotateY(90deg);
+        left: 14mm;
+        top: 15.6mm;
+        &::after,&::before{
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 6mm;
+          background-color: rgb(19, 19, 19);
+          top: 100%;
+          transform-style: preserve-3d;
+          transform-origin: top;
+          transform: rotateX(55deg);
+        }
+        
+        &::after{
+          content: '';
+          top: -6mm;
+          transform-origin: bottom;
+          transform: rotateX(-55deg);
+        }
+      }
+      .wheelCoverFront{
+        top:-14.5mm;
+      }
+    }
+    .leftSide{
+      border-right:  19.69mm solid rgb(14, 14, 14);
+      border-top: 9.2mm solid transparent;
+      transform-origin: right;
+      right: 0;
+      transform: rotateY(-90deg);
+      .frontDoor{
+        transform: rotateY(0deg) translateZ(-0.01mm) translateX(0.9mm) translateY(-3.5mm);
+        .mirror{
+          transform: rotateX(-40deg);  
+        }
+        &:hover{
+          transform: rotateY(0deg) translateZ(-0.01mm) translateX(0.9mm) translateY(-3.5mm) rotateX(-40deg);
+        }
+      }
+      .backDoor{
+        transform: rotateY(0deg) translateZ(-0.01mm) translateX(0.9mm) translateY(-3mm);
+          &:hover{
+            transform: rotateY(0deg) translateZ(-0.01mm) translateX(0.9mm) translateY(-3mm) rotateX(-40deg);
+          }
+      }
+      &>.window{
+        left: 1.9mm;
+      }
+    }
+    .rightSide{
+      border-left: 19.69mm solid rgb(13, 13, 13);
+      border-top: 9.2mm solid transparent;    
+      transform-origin: left;    
+      left: 0;
+      transform: rotateY(90deg);
+      .wheelCoverFront,.wheelCoverBack{
+        left:-14mm;
+        &::before{
+          transform: rotateX(-55deg);
+        }
+        &::after{
+          transform: rotateX(55deg);
+        }
+      }
+    }
+    .frontLeft{
+      height: 0;
+      width: 11mm;
+      border-top: 17mm solid rgb(14, 14, 14);
+      border-left: 1mm solid transparent;
+      transform-style: preserve-3d;
+      transform-origin: right;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transform: rotateY(90deg) rotateZ(180deg);
+    }
+    .frontRight{
+      height: 0;
+      width: 11mm;
+      border-top: 17mm solid rgb(14, 14, 14);
+      border-right: 1mm solid transparent;
+      transform-style: preserve-3d;
+      transform-origin: left;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotateY(-90deg) rotateZ(180deg);
+    }
+    .roof{
+      height: 26.5mm;
+      width: 21.87mm;
+      transform-style: preserve-3d;
+      background-color: rgb(44, 44, 44);      
+      position: absolute;  
+      bottom: 0;
+      transform: translateZ(-19.69mm);   
+      z-index: 200;
+    }
+    .windShield{
+      background-color: rgb(15, 15, 15);
+      height: 10.2mm;
+      width: 100%;
+      transform-style: preserve-3d;
+      transform-origin: bottom;
+      transform: translateZ(-10.5mm) rotateX(115deg); 
+      position: absolute;  
+      top: 5mm;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      padding-bottom: 1mm;
+      .glass{
+        width: 85%;
+        height: 85%;
+        background-color: rgba(255, 255, 255, 0.585);
+      }
+    }
+    .hood{
+      height: 15mm;
+      width: 21.87mm;
+      transform-style: preserve-3d;
+      background-color: rgb(40, 40, 40);      
+      transform-origin: bottom;
+      position: absolute;  
+      top: 0;
+      transform: translateZ(-10.9mm) rotateX(-4deg); 
+      transition: 200ms;
+      &:hover{
+        transform: translateZ(-10.9mm) rotateX(20deg); 
+      }
+    }
+    .front{
+      height: 10mm;
+      width:  21.87mm;
+      transform-style: preserve-3d;
+      background-color: rgb(51, 51, 51);
+      transform-origin: top;
+      position: absolute;
+      top: 0;
+      transform: rotateX(-90deg);
+      display: flex;
+      align-items: center;
+      flex-direction: column-reverse;
+      justify-content: space-evenly;    
+      padding: 1mm 1mm;
+      .upperSide{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        .headLight{
+          width: 3mm;
+          height: 3mm;
+          border-radius: 50%;
+          background-color: white;
+        }
+        .grill{
+          height: 3mm;
+          width: 10mm;
+          background-color: rgb(28, 28, 28);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 1mm;
+          div{
+            width:  1.5mm;
+            height: 1.5mm;
+            font-size: 4px;
+            color: white;
+            border: 0.5px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: sans-serif;
+          }
+        }
+      }
+      .lowerSide{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        div{
+          width: 8mm;
+          height: 2mm;
+          background-color: rgb(30, 30, 30);
+          border-radius: 1mm;
+          position: relative;
+          &::after{
+            content: '';
+            position: absolute;
+            width: 4mm;
+            height: 2.5mm;
+            background-color: black;
+            border-radius: 1mm;
+            left: 9mm;
+            bottom: 0;
+          }
+          &::before{
+            content: '';
+            position: absolute;
+            width: 4mm;
+            height: 2.5mm;
+            background-color: black;
+            border-radius: 1mm;
+            right: 9mm;
+            bottom: 0;
+          }
+        }
+      }
+     
+    }
+  }
+}
