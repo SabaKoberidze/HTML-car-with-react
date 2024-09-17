@@ -104,7 +104,7 @@ const GWagon: React.FC = () => {
       <div
         className="body"
         style={{
-          transform: `rotateX(-110deg) translateX(${positionX}px) translateY(${positionY}px) rotateZ(${rotateZ}deg)`,
+          transform: `scale(1) rotateX(-110deg) translateX(${positionX}px) translateY(${positionY}px) rotateZ(${rotateZ}deg)`,
         }}
       >
         <div className="roof"></div>
