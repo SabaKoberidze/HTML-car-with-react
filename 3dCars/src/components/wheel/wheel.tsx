@@ -14,7 +14,6 @@ const Wheel: React.FC<WheelProps> = ({ type, movement, rotation }) => {
   const rimRodCount = 8;
   const rimRods = Array.from({ length: rimRodCount }, (_, i) => i + 1);
   
-  // Construct classes based on props
   const wheelClass = `wheel ${type || ''} ${movement || ''} ${rotation || ''}`;
   
   return (
@@ -35,6 +34,7 @@ const Wheel: React.FC<WheelProps> = ({ type, movement, rotation }) => {
           <div className='wheelBorder'></div>
         </div>
         <div className='sideWheel'>
+          
           <div className='wheelBorder'></div>
         </div>
         <div className="strips">

@@ -1,7 +1,7 @@
 .gWagon{
   width: 100vw;
   height: 100vh;
-  background-color: grey;
+  background-color: rgb(49, 49, 49);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +90,7 @@
           transform-style: preserve-3d;
           width: 2.5mm;
           height: 4mm;
-          background-color:black;
+          background-color:rgb(53, 53, 53);
           transform-origin: top;
           top: 0.5mm;
           left: 6.8mm;
