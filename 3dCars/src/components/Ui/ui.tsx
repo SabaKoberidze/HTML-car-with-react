@@ -32,7 +32,7 @@ const Ui = () => {
     };
   }, [activeKeys]);
 
-  const handleMouseDown = (key: string) => {
+  const handlePointerDown = (key: string) => {
     if (!activeKeys.includes(key)) {
       setActiveKeys((prevKeys) => [...prevKeys, key]);
       simulateKeyPress(key);
@@ -41,7 +41,7 @@ const Ui = () => {
     }
   };
 
-  const handleMouseUp = (key: string) => {
+  const handlePointerUp = (key: string) => {
     if (activeKeys.includes(key)) {
       setActiveKeys((prevKeys) => prevKeys.filter((k) => k !== key));
       simulateKeyRelease(key);
@@ -50,7 +50,7 @@ const Ui = () => {
     }
   };
 
-  const handleMouseLeave = (key: string) => {
+  const handlePointerLeave = (key: string) => {
     if (activeKeys.includes(key)) {
       setActiveKeys((prevKeys) => prevKeys.filter((k) => k !== key));
       simulateKeyRelease(key);
@@ -79,29 +79,29 @@ const Ui = () => {
         <div className='vertical'>
           <div
             className='ArrowUp'
-            onMouseDown={() => handleMouseDown('ArrowUp')}
-            onMouseUp={() => handleMouseUp('ArrowUp')}
-            onMouseLeave={() => handleMouseLeave('ArrowUp')}
+            onPointerDown={() => handlePointerDown('ArrowUp')}
+            onPointerUp={() => handlePointerUp('ArrowUp')}
+            onPointerLeave={() => handlePointerLeave('ArrowUp')}
           ></div>
           <div
             className='ArrowDown'
-            onMouseDown={() => handleMouseDown('ArrowDown')}
-            onMouseUp={() => handleMouseUp('ArrowDown')}
-            onMouseLeave={() => handleMouseLeave('ArrowDown')}
+            onPointerDown={() => handlePointerDown('ArrowDown')}
+            onPointerUp={() => handlePointerUp('ArrowDown')}
+            onPointerLeave={() => handlePointerLeave('ArrowDown')}
           ></div>
         </div>
         <div className='horizontal'>
           <div
             className='ArrowLeft'
-            onMouseDown={() => handleMouseDown('ArrowLeft')}
-            onMouseUp={() => handleMouseUp('ArrowLeft')}
-            onMouseLeave={() => handleMouseLeave('ArrowLeft')}
+            onPointerDown={() => handlePointerDown('ArrowLeft')}
+            onPointerUp={() => handlePointerUp('ArrowLeft')}
+            onPointerLeave={() => handlePointerLeave('ArrowLeft')}
           ></div>
           <div
             className='ArrowRight'
-            onMouseDown={() => handleMouseDown('ArrowRight')}
-            onMouseUp={() => handleMouseUp('ArrowRight')}
-            onMouseLeave={() => handleMouseLeave('ArrowRight')}
+            onPointerDown={() => handlePointerDown('ArrowRight')}
+            onPointerUp={() => handlePointerUp('ArrowRight')}
+            onPointerLeave={() => handlePointerLeave('ArrowRight')}
           ></div>
         </div>
       </div>

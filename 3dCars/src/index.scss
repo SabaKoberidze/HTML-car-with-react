@@ -14,4 +14,11 @@ body {
   height: 100vh;
   overflow: hidden;
 }
-
+input,
+textarea,
+button,
+select,
+a,
+div {
+    -webkit-tap-highlight-color: transparent;
+}
