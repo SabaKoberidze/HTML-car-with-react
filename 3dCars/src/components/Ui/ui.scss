@@ -1,0 +1,111 @@
+.ui{
+    position: absolute;
+    bottom: 5%;
+    left: 50%; width: 100vw;
+    max-width: 600px;
+    transform: translateX(-50%);
+    .hints{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3mm;
+        padding: 4mm 0;
+        font-size: 16px;
+flex-direction: column;
+color: rgba(255, 255, 255, 0.651);
+font-family: sans-serif;
+font-weight: bold;
+.hint2{
+
+    font-size: 12px;
+}
+.hint1{
+    @media (pointer:coarse) {
+        display: none;
+    }
+}
+    }
+    .indicators{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+       width: 100%;
+        padding: 0 2mm;
+            .vertical{
+                display: flex;
+                flex-direction: column;
+                gap: 5mm;
+                div{
+                    cursor: pointer;
+                    width: 25mm;
+                    height: 25mm;
+                    background-color: rgba(0, 0, 0, 0);
+                    border: 4px solid rgba(0, 0, 0, 0.293);
+                    position: relative;
+                    transition: 100ms;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 0; 
+                        height: 0; 
+                        border-left: 5mm solid transparent;
+                        border-right: 5mm solid transparent;            
+                        border-bottom: 7mm solid rgba(0, 0, 0, 0.196);
+                    }
+                    &.ArrowDown{
+                        &::before{
+                           
+                            transform: translate(-50%, -50%) rotate(180deg);
+                        }
+                    }
+                    &.ArrowUp.active, &.ArrowDown.active {
+                        background-color: #ffffff31;
+                    }
+                }
+             
+            }
+            .horizontal{
+                display: flex;
+                gap: 5mm;
+                justify-content: center;
+                align-items: center;
+                div{
+                    cursor: pointer;
+                    border: 4px solid rgba(0, 0, 0, 0.293);
+                    min-width: 25mm;
+                    height: 25mm;
+                    position: relative;
+                    transition: 100ms;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        width: 0; 
+                        height: 0; 
+                        transform: translate(-25%, -50%);
+                        border-top: 5mm solid transparent;
+                        border-bottom: 5mm solid transparent;            
+                        border-left: 7mm solid rgba(0, 0, 0, 0.196);
+                    }
+                    &.ArrowLeft{
+                        &::before{
+                            border: 0;
+                            border-top: 5mm solid transparent;
+                            border-bottom: 5mm solid transparent;            
+                            border-right: 7mm solid rgba(0, 0, 0, 0.196);
+                            transform: translate(-75%, -50%);
+                        }
+                    }  
+                    &.ArrowLeft.active, &.ArrowRight.active {
+                        background-color: #ffffff31;
+                    }      
+                }
+            }
+        }
+          
+}
