@@ -21,13 +21,14 @@ const Wheel: React.FC<WheelProps> = ({ type, movement, rotation }) => {
       <div id="frame">      
         <div className='disk'>
           <div className='diskCenter'>
-            {rimRods.map((_, index) => {
+            {type !== 'spareTire' && (
+            rimRods.map((_, index) => {
               const rotation = index * (360 / rimRodCount);
               const style = {
                 transform: `rotate(${rotation}deg)`,
               };
               return <div key={index} className='rod' style={style}> </div>
-            })}
+            }))}
           </div>
         </div>
         <div className='sideWheel'>
@@ -36,23 +37,25 @@ const Wheel: React.FC<WheelProps> = ({ type, movement, rotation }) => {
         <div className='sideWheel'>
           
           <div className='wheelBorder'></div>
-        </div>
-        <div className="strips">
-          {strips.map((_, index) => {
-            const rotation = index * (360 / stripCount);
-            const style = {
-              transform: `rotateY(${rotation}deg) translateZ(5mm)`,
-            };
-            return <div key={index} className="strip" style={style}></div>;
-          })}
-          {strips.map((_, index) => {
-            const rotation = index * (360 / stripCount);
-            const style = {
-              transform: `rotateY(${rotation}deg) translateZ(3mm)`,
-            };
-            return <div key={index} className="strip" style={style}></div>;
-          })}
-        </div>
+          </div>
+        
+          <div className="strips">
+            {strips.map((_, index) => {
+              const rotation = index * (360 / stripCount);
+              const style = {
+                transform: `rotateY(${rotation}deg) translateZ(5mm)`,
+              };
+              return <div key={index} className="strip" style={style}></div>;
+            })}
+            {type !== 'spareTire' && (strips.map((_, index) => {
+              const rotation = index * (360 / stripCount);
+              const style = {
+                transform: `rotateY(${rotation}deg) translateZ(3mm)`,
+              };
+              return <div key={index} className="strip" style={style}></div>;
+            }))}
+          </div>
+     
       </div>
     </div>
   );
